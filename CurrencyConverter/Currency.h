@@ -6,7 +6,7 @@ class Currency
 public:
 	std::string name;
 	float valueFromUSD;
-	char symbol;
+	std::string symbol;
 
 	float convert(float usdValue);
 };
