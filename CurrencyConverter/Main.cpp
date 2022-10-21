@@ -51,23 +51,36 @@ int main()
 	size_t currenciesSize = currencies.size();
 
 	int inputCurrency;
+	int outputCurrency;
 	float inputValue;
 	float convertedValue;
 	
-	std::cout << "Welcome to the currency converter!" << std::endl;
+	std::cout << "Welcome to the currency converter!" << std::endl << "What currency do you want to convert to?" << std::endl;
 	for (size_t i = 0; i < currenciesSize; i++)
 	{
 		std::cout << i << " - " << currencies.at(i).symbol << " | ";
 	} 
+	std::cin >> outputCurrency;
+
+	if (outputCurrency < 0 || outputCurrency > currenciesSize) {
+		// cringe!!!
+	}
+
+	std::cout << "What currency do you want to convert from?" << std::endl;
+	for (size_t i = 0; i < currenciesSize; i++)
+	{
+		std::cout << i << " - " << currencies.at(i).symbol << " | ";
+	}
 	std::cin >> inputCurrency;
 
 	if (inputCurrency < 0 || inputCurrency > currenciesSize) {
 		// cringe!!!
 	}
-	std::cout << "Enter the amount in USD" << std::endl;
+
+	std::cout << "Enter the amount" << std::endl;
 	std::cin >> inputValue;
 
-	std::cout << currencies.at(inputCurrency).valueFromUSD * inputValue;
+	std::cout << currencies.at(inputCurrency).valueFromUSD * inputValue * currencies.at(outputCurrency).valueFromUSD;
 
 	std::cin.get();
 }
