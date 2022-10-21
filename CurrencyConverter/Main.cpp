@@ -5,7 +5,7 @@
 std::vector<Currency> setupCurrencies()
 {
 	std::vector<Currency> result;
-	Currency gbp, eur, usd, yen;
+	Currency gbp, eur, usd, jpy, aud, cad, cny;
 	gbp.name = "Great British Pound";
 	gbp.symbol = "GBP";
 	gbp.valueFromUSD = 0.89f;
@@ -21,10 +21,25 @@ std::vector<Currency> setupCurrencies()
 	usd.valueFromUSD = 1.0f;
 	result.push_back(usd);
 
-	yen.name = "Japanese Yen";
-	yen.symbol = "YEN";
-	yen.valueFromUSD = 149.74f;
-	result.push_back(yen);
+	jpy.name = "Japanese Yen";
+	jpy.symbol = "JPY";
+	jpy.valueFromUSD = 149.74f;
+	result.push_back(jpy);
+
+	aud.name = "Australian Dollar";
+	aud.symbol = "AUD";
+	aud.valueFromUSD = 1.57f;
+	result.push_back(aud);
+
+	cad.name = "Canadian Dollar";
+	cad.symbol = "AUD";
+	cad.valueFromUSD = 1.36f;
+	result.push_back(cad);
+
+	cny.name = "Chinese Yuan Renminbi";
+	cny.symbol = "CNU";
+	cny.valueFromUSD = 7.24f;
+	result.push_back(cny);
 
 	return result;
 
