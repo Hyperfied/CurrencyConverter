@@ -33,21 +33,26 @@ std::vector<Currency> setupCurrencies()
 int main()
 {
 	std::vector<Currency> currencies = setupCurrencies();
+	size_t currenciesSize = currencies.size();
 
 	int inputCurrency;
 	float inputValue;
 	float convertedValue;
 	
 	std::cout << "Welcome to the currency converter!" << std::endl;
-	for (size_t i = 0; i < currencies.size(); i++)
+	for (size_t i = 0; i < currenciesSize; i++)
 	{
 		std::cout << i << " - " << currencies.at(i).symbol << " | ";
 	} 
 	std::cin >> inputCurrency;
-	std::cout << std::endl << "Enter the amount in USD" << std::endl;
+
+	if (inputCurrency < 0 || inputCurrency > currenciesSize) {
+		// cringe!!!
+	}
+	std::cout << "Enter the amount in USD" << std::endl;
 	std::cin >> inputValue;
 
-
+	std::cout << currencies.at(inputCurrency).valueFromUSD * inputValue;
 
 	std::cin.get();
 }
